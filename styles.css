@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --grey-50: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+main > section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+main {
+  padding: calc(5vw + 0.5rem);
+}
+
+.slogan {
+  font-weight: 200;
+}
+
+.powered-by {
+  font-weight: 600;
+}
+
+.powered-by {
+  margin-bottom: 1rem;
+}
+
+.slogan,
+.powered-by {
+  font-size: 1.75rem;
+}
+
+.slogan,
+.powered-by,
+.description {
+  text-align: center;
+  color: var(--grey-400);
+}
+
+.description {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.supervisor {
+  border-top: 5px solid var(--cyan);
+}
+
+.team-builder {
+  border-top: 5px solid var(--red);
+}
+
+.karma {
+  border-top: 5px solid var(--orange);
+}
+
+.calculator {
+  border-top: 5px solid var(--blue);
+}
+
+.supervisor,
+.team-builder,
+.karma,
+.calculator {
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-radius: 0.35rem;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+div > p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+h2,
+div > p {
+  color: var(--grey-400);
+}
+
+@media (width >= 75rem) {
+  main > section {
+    grid-template-areas:
+      ". team-builder ."
+      "supervisor team-builder karma"
+      "supervisor calculator karma"
+      ". calculator .";
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  .calculator {
+    grid-area: calculator;
+  }
+
+  .team-builder {
+    grid-area: team-builder;
+  }
+
+  .supervisor {
+    grid-area: supervisor;
+  }
+
+  .karma {
+    grid-area: karma;
+  }
+}
